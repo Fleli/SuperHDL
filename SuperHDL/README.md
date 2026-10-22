@@ -11,7 +11,7 @@ pinned Maven version on first use; a separate Maven installation is unnecessary.
 From the repository root:
 
 ```sh
-cd Compiler
+cd SuperHDL
 ./mvnw clean verify
 ```
 
