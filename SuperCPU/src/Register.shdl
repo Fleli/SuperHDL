@@ -1,1 +1,31 @@
 
+module Register {
+    
+    parameters {
+        int bitWidth
+    }
+    
+    inputs {
+        bit clk;
+        bit reset;
+        bit[bitWidth-1 : 0] d;
+    }
+    
+    outputs {
+        bit[bitWidth-1 : 0] q;
+        bit parity;                 # basically just for language feature show
+    }
+    
+    when rise(clk) {
+        if reset {
+            q = 0;
+        } else {
+            q = d;
+        }
+    }
+    
+    always {
+        
+    }
+    
+}
