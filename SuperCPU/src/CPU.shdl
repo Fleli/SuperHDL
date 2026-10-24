@@ -6,7 +6,9 @@ module CPU {
         int bitWidth;
     }
     
-    CPUCore(bitWidth=bitWidth)[nCores] cores;
+    build {
+        add CPUCore(bitWidth=bitWidth)[nCores] cores;
+    }
     
     inputs {
         

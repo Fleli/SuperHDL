@@ -1,0 +1,38 @@
+
+module XORReducer {
+    
+    parameters {
+        int bitWidth;
+    }
+    
+    inputs {
+        bit[bitWidth-1 : 0] operands;
+    }
+    
+    outputs {
+        bit reduced;
+    }
+    
+    build {
+        
+        assert self.bitWidth >= 1;
+        
+        if self.bitWidth > 1 {
+            add XORReducer(bitWidth=bitWidth-1) subReducer;
+        }
+        
+    }
+    
+    always {
+        
+        if bitWidth == 1 {
+            reduced = operands[0];
+        } else {
+            subReducer.operands = operands[bitWidth-1 : 1];
+            bit subSolution = subReducer.reduced;
+            self.reduced = subSolution ^ operands[0];
+        }
+        
+    }
+    
+}
