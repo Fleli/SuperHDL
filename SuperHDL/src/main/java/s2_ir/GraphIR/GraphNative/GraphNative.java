@@ -3,6 +3,9 @@ package s2_ir.GraphIR.GraphNative;
 import java.util.ArrayList;
 import java.util.List;
 
+import s2_ir.GraphIR.Ports.GraphInputPort;
+import s2_ir.GraphIR.Ports.GraphOutputPort;
+import s2_ir.GraphIR.Ports.GraphPortOwner;
 import s2_ir.Optimizations.Optimizable;
 
 // choices here are somewhat arbitrary since theoretically everything can just be lowered to purely NAND gates immediately
@@ -10,7 +13,7 @@ import s2_ir.Optimizations.Optimizable;
 // instead just lower everything later (in the emitter) since the lowering may also depend
 // on the target (e.g. PCB versus FPGA; latter may want to retain e.g. latches)
 
-public abstract class GraphNative implements Optimizable {
+public abstract class GraphNative implements Optimizable, GraphPortOwner {
     
     private final List<GraphInputPort> inputPorts = new ArrayList<>();
     private final List<GraphOutputPort> outputPorts = new ArrayList<>();

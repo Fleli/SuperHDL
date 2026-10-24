@@ -14,3 +14,6 @@ HDLs and compiler implementation and retain ownership of the design.
   refactoring without explicit direction.
 - If the requested design has a problem, explain it and let the owner
   decide how to proceed.
+- Leave one indented blank line between the final statement in a block and
+  its closing curly brace. Indent every blank line in a block to match that
+  block.
