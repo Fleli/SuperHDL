@@ -1,6 +1,6 @@
 package s2_ir.Optimizations;
 
-import s2_ir.GraphIR.Core.GraphModuleDiff;
+import s2_ir.GraphIR.Diffs.GraphModuleDiff;
 
 public abstract class OptimizationResult {
     

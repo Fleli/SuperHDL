@@ -1,4 +1,4 @@
-package s2_ir.GraphIR.Core;
+package s2_ir.GraphIR.Diffs;
 
 import java.util.List;
 
