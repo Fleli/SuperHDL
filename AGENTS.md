@@ -17,3 +17,4 @@ HDLs and compiler implementation and retain ownership of the design.
 - Leave one indented blank line between the final statement in a block and
   its closing curly brace. Indent every blank line in a block to match that
   block.
+- For short one-line methods, omit the interior blank lines.
