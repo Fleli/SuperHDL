@@ -1,0 +1,19 @@
+
+module CPU {
+    
+    parameters {
+        int nCores,
+        int bitWidth;
+    };
+    
+    CPUCore(bitWidth=bitWidth)[nCores] cores;
+    
+    inputs {
+        
+    }
+    
+    outputs {
+        
+    }
+    
+};

@@ -1,0 +1,8 @@
+
+module CPUCore {
+    
+    parameters {
+        int bitWidth
+    }
+    
+}
