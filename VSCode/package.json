@@ -1,0 +1,35 @@
+{
+    "name": "superhdl-syntax",
+    "publisher": "superhdl",
+    "displayName": "SuperHDL Syntax",
+    "description": "Syntax highlighting for SuperHDL source files.",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.85.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "superhdl",
+                "aliases": [
+                    "SuperHDL",
+                    "shdl"
+                ],
+                "extensions": [
+                    ".shdl"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "superhdl",
+                "scopeName": "source.superhdl",
+                "path": "./syntaxes/superhdl.tmLanguage.json"
+            }
+        ]
+    }
+}

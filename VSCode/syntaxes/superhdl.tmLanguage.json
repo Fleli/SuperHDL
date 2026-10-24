@@ -1,0 +1,70 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "SuperHDL",
+    "scopeName": "source.superhdl",
+    "patterns": [
+        {
+            "include": "#comments"
+        },
+        {
+            "include": "#moduleDeclaration"
+        },
+        {
+            "include": "#keywords"
+        },
+        {
+            "include": "#types"
+        },
+        {
+            "include": "#numbers"
+        },
+        {
+            "include": "#operators"
+        }
+    ],
+    "repository": {
+        "comments": {
+            "patterns": [
+                {
+                    "name": "comment.line.number-sign.superhdl",
+                    "match": "#.*$"
+                }
+            ]
+        },
+        "moduleDeclaration": {
+            "match": "\\b(module)\\s+([A-Za-z_][A-Za-z0-9_]*)",
+            "captures": {
+                "1": {
+                    "name": "keyword.control.declaration.superhdl"
+                },
+                "2": {
+                    "name": "entity.name.type.module.superhdl"
+                }
+            }
+        },
+        "keywords": {
+            "patterns": [
+                {
+                    "name": "keyword.control.superhdl",
+                    "match": "\\b(parameters|inputs|outputs|build|always|when|add|if|else|assert|rise)\\b"
+                },
+                {
+                    "name": "variable.language.superhdl",
+                    "match": "\\bself\\b"
+                }
+            ]
+        },
+        "types": {
+            "name": "storage.type.superhdl",
+            "match": "\\b(bit|int)\\b"
+        },
+        "numbers": {
+            "name": "constant.numeric.integer.superhdl",
+            "match": "\\b[0-9]+\\b"
+        },
+        "operators": {
+            "name": "keyword.operator.superhdl",
+            "match": "==|>=|<=|!=|&&|\\|\\||[=+\\-*/^&|!<>:]"
+        }
+    }
+}
