@@ -7,15 +7,17 @@ public abstract class GraphNativeBitwise extends GraphNative {
     private final int bitWidth;
     private final int inputArity;
     
-    private final GraphNative[] operandNodes;
-    private final GraphNative outputNode;
-
-    protected GraphNativeBitwise(int bitWidth, int inputArity,
-                                 GraphNative[] operandNodes, GraphNative outputNode) {
+    protected GraphNativeBitwise(int bitWidth, int inputArity) {
+        
         this.bitWidth = bitWidth;
         this.inputArity = inputArity;
-        this.operandNodes = operandNodes;
-        this.outputNode = outputNode;
+        
+        for (int operandIndex = 0; operandIndex < inputArity; operandIndex++) {
+            declareInputPort("operand[" + operandIndex + "]", bitWidth);
+        }
+        
+        declareOutputPort("result", bitWidth);
+        
     }
     
     public int getBitWidth() {
@@ -26,12 +28,4 @@ public abstract class GraphNativeBitwise extends GraphNative {
         return inputArity;
     }
 
-    public GraphNative[] getOperandNodes() {
-        return operandNodes;
-    }
-
-    public GraphNative getOutputNode() {
-        return outputNode;
-    }
-    
 }
