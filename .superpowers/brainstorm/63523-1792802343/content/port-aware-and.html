@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { background: #111827; color: #e5e7eb; font-family: ui-sans-serif, system-ui, sans-serif; margin: 0; padding: 42px; }
+    h1 { margin: 0 0 8px; font-size: 28px; }
+    .subtitle { color: #aeb8c8; margin: 0 0 32px; max-width: 760px; line-height: 1.5; }
+    .diagram { display: grid; grid-template-columns: 1fr 120px 1.25fr 120px 1fr; align-items: center; gap: 0; max-width: 1120px; }
+    .node { border: 1px solid #334155; border-radius: 12px; background: #172033; padding: 16px; min-height: 120px; }
+    .node h2 { font-size: 15px; margin: 0 0 16px; color: #f8fafc; }
+    .node small { color: #94a3b8; }
+    .port { background: #25324b; border-radius: 6px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; margin: 8px 0; padding: 8px 10px; }
+    .input { border-left: 3px solid #38bdf8; }
+    .output { border-right: 3px solid #a78bfa; text-align: right; }
+    .gate { border: 2px solid #38bdf8; background: #172554; min-height: 210px; }
+    .gate h2 { color: #7dd3fc; text-align: center; }
+    .edge { color: #64748b; font-size: 32px; text-align: center; }
+    .detail { margin-top: 36px; max-width: 1120px; display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .panel { border: 1px solid #334155; border-radius: 10px; background: #172033; padding: 18px; }
+    .panel h3 { margin: 0 0 10px; font-size: 15px; }
+    code { color: #93c5fd; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .question { margin-top: 28px; padding: 15px 18px; border-left: 3px solid #fbbf24; background: #2c2616; max-width: 1080px; }
+  </style>
+</head>
+<body>
+  <h1>First slice: a port-aware AND node</h1>
+  <p class="subtitle">The AND owns named ports. Connections are edges between output and input ports; they are not extra circuit nodes.</p>
+
+  <div class="diagram">
+    <section class="node">
+      <h2>Source A</h2>
+      <div class="port output">result · 8 bits</div>
+    </section>
+    <div class="edge">→</div>
+    <section class="node gate">
+      <h2>GraphNativeAND</h2>
+      <div class="port input">operand[0] · 8 bits</div>
+      <div class="port input">operand[1] · 8 bits</div>
+      <div class="port output">result · 8 bits</div>
+      <small>bitWidth = 8<br>inputArity = 2</small>
+    </section>
+    <div class="edge">→</div>
+    <section class="node">
+      <h2>OR and XOR</h2>
+      <div class="port input">OR.operand[0] · 8 bits</div>
+      <div class="port input">XOR.operand[0] · 8 bits</div>
+      <small>Both consume the same AND result.</small>
+    </section>
+  </div>
+
+  <div class="detail">
+    <section class="panel">
+      <h3>What the AND stores</h3>
+      <code>inputPorts: [operand[0], operand[1]]</code><br>
+      <code>outputPorts: [result]</code>
+    </section>
+    <section class="panel">
+      <h3>What a connection stores</h3>
+      <code>sourceOutput → destinationInput</code><br>
+      <code>AND.result → OR.operand[0]</code>
+    </section>
+  </div>
+
+  <div class="question">The first implementation move: create <code>GraphInputPort</code> and <code>GraphOutputPort</code>, then change <code>GraphNativeBitwise</code> to create its own ports from <code>bitWidth</code> and <code>inputArity</code>. Does this match what you had in mind?</div>
+</body>
+</html>
