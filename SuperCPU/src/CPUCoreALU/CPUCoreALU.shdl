@@ -9,6 +9,8 @@ module CPUCoreALU {
         add ALUADD(bitWidth=bitWidth) logicAdd;
         add ALUXOR(bitWidth=bitWidth) logicXor;
         add ALUNAND(bitWidth=bitWidth) logicNand;
+        add Register(bitWidth=bitWidth) d1;
+        add Register(bitWidth=bitWidth) d2;
     }
     
     inputs {
@@ -28,6 +30,15 @@ module CPUCoreALU {
         } else if operation == ALUOperation.NAND {
             q = logicNand.q;
         }
+    }
+    
+    always {
+        logicAdd.d1 = d1.q;
+        logicAdd.d2 = d2.q;
+        logicXor.d1 = d1.q;
+        logicXor.d2 = d2.q;
+        logicNand.d1 = d1.q;
+        logicNand.d2 = d2.q;
     }
     
 }
