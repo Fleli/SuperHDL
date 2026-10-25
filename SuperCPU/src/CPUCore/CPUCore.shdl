@@ -30,18 +30,21 @@ module CPUCore {
         
         add Counter(bw=bw) instructionPointer;
         
+        # TODO: Remember to wire tState.d
         add Counter(bw=CPU_CORE_T_STATES_BIT_WIDTH) tState;
         
     }
     
-    when rise(clk) {
-        
-    }
-    
     always {
+        
         for (int i = 0; i < nALUs; i++) {
             alus[i].clk = self.clk;
         }
+        
+        tState.clk = self.clk;
+        tState.count = true;
+        tState.jump = false;
+        
     }
     
 }

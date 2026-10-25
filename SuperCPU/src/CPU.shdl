@@ -1,4 +1,8 @@
 
+# Basic design of multi-core CPU
+# Will not worry about memory caching for now; assuming
+# such low clock frequency that memory isn't a bottleneck
+# (at least while designing core of it + HDL compiler)
 module CPU {
     
     parameters {
@@ -7,6 +11,7 @@ module CPU {
     }
     
     build {
+        
         for (int i = 0; i < nCores; i += 1) {
             bool performance = (i < 2);
             add CPUCore(
@@ -14,14 +19,21 @@ module CPU {
                 performance=performance
             ) cores[i];
         }
+        
     }
     
     inputs {
-        
+        bit clk;
     }
     
     outputs {
         
+    }
+    
+    always {
+        for (int i = 0; i < nCores; i += 1) {
+            cores[i].clk = self.clk;
+        }
     }
     
 };

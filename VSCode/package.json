@@ -3,7 +3,7 @@
     "publisher": "superhdl",
     "displayName": "SuperHDL Syntax",
     "description": "Syntax highlighting for SuperHDL source files.",
-    "version": "0.0.6",
+    "version": "0.0.7",
     "engines": {
         "vscode": "^1.85.0"
     },
