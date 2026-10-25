@@ -1,5 +1,5 @@
 .PHONY: all
 
 all:
-	@cd SuperHDL && ./mvnw -q compile
-	@java -cp SuperHDL/target/classes Main x y 123
+	@cd Compilers/SuperHDL && ./mvnw -q compile
+	@java -cp Compilers/SuperHDL/target/classes Main x y 123
