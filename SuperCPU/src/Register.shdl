@@ -16,6 +16,10 @@ module Register {
         bit parity;                 # basically just for language feature show
     }
     
+    build {
+        add XORReducer(bitWidth=bitWidth) parityXORReducer;
+    }
+    
     when rise(clk) {
         if reset {
             q = 0;
@@ -25,7 +29,8 @@ module Register {
     }
     
     always {
-        
+        parityXORReducer.operands = q;
+        parity = parityXORReducer.reduced;
     }
     
 }
