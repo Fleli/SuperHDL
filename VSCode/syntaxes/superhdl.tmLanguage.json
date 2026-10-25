@@ -16,6 +16,9 @@
             "include": "#types"
         },
         {
+            "include": "#booleans"
+        },
+        {
             "include": "#numbers"
         },
         {
@@ -46,7 +49,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.superhdl",
-                    "match": "\\b(parameters|inputs|outputs|build|always|when|add|if|else|assert|rise)\\b"
+                    "match": "\\b(parameters|private|inputs|outputs|build|always|when|add|if|else|for|assert|rise)\\b"
                 },
                 {
                     "name": "variable.language.superhdl",
@@ -56,7 +59,11 @@
         },
         "types": {
             "name": "storage.type.superhdl",
-            "match": "\\b(bit|int)\\b"
+            "match": "\\b(bit|bool|int)\\b"
+        },
+        "booleans": {
+            "name": "constant.language.boolean.superhdl",
+            "match": "\\b(true|false)\\b"
         },
         "numbers": {
             "name": "constant.numeric.integer.superhdl",

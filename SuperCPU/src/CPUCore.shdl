@@ -2,7 +2,38 @@
 module CPUCore {
     
     parameters {
-        int bitWidth
+        int bitWidth;
+        bool performance;
+    }
+    
+    private {
+        int nALUs = 1;
+    }
+    
+    inputs {
+        bit clk;
+    }
+    
+    outputs {
+        
+    }
+    
+    build {
+        
+        if performance {
+            nALUs = 4;
+        }
+        
+        for (int i = 0; i < nALUs; i++) {
+            add CPUCoreALU() alus[i];
+        }
+        
+    }
+    
+    always {
+        for (int i = 0; i < nALUs; i++) {
+            alus[i].clk = self.clk;
+        }
     }
     
 }

@@ -1,0 +1,20 @@
+
+module CPUCoreALU {
+    
+    parameters {
+        
+    }
+    
+    build {
+        
+    }
+    
+    inputs {
+        bit clk;
+    }
+    
+    outputs {
+        
+    }
+    
+}
