@@ -22,11 +22,11 @@ module CPUCoreALU {
     
     always {
         if operation == ALUOperation.XOR {
-            q = xor.q;
+            q = logicXor.q;
         } else if operation == ALUOperation.ADD {
-            q = add.q;
+            q = logicAdd.q;
         } else if operation == ALUOperation.NAND {
-            q = nand.q;
+            q = logicNand.q;
         }
     }
     
