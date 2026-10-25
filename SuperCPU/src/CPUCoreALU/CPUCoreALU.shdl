@@ -13,12 +13,21 @@ module CPUCoreALU {
     
     inputs {
         bit clk;
+        ALUOperation selector;
     }
     
     outputs {
-        
+        bit[bitWidth-1 : 0] q;
     }
     
-    
+    always {
+        if operation == ALUOperation.XOR {
+            q = xor.q;
+        } else if operation == ALUOperation.ADD {
+            q = add.q;
+        } else if operation == ALUOperation.NAND {
+            q = nand.q;
+        }
+    }
     
 }
