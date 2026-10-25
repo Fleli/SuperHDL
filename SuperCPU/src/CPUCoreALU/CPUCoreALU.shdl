@@ -2,15 +2,15 @@
 module CPUCoreALU {
     
     parameters {
-        int bitWidth;
+        int bw;
     }
     
     build {
-        add ALUADD(bitWidth=bitWidth) logicAdd;
-        add ALUXOR(bitWidth=bitWidth) logicXor;
-        add ALUNAND(bitWidth=bitWidth) logicNand;
-        add Register(bitWidth=bitWidth) d1;
-        add Register(bitWidth=bitWidth) d2;
+        add ALUADD(bw=bw) logicAdd;
+        add ALUXOR(bw=bw) logicXor;
+        add ALUNAND(bw=bw) logicNand;
+        add Register(bw=bw) d1;
+        add Register(bw=bw) d2;
     }
     
     inputs {
@@ -19,7 +19,7 @@ module CPUCoreALU {
     }
     
     outputs {
-        bit[bitWidth-1 : 0] q;
+        bit[bw-1 : 0] q;
     }
     
     always {

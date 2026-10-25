@@ -3,14 +3,14 @@ module CPU {
     
     parameters {
         int nCores;
-        int bitWidth;
+        int bw;
     }
     
     build {
         for (int i = 0; i < nCores; i += 1) {
             bool performance = (i < 2);
             add CPUCore(
-                bitWidth=bitWidth,
+                bw=bw,
                 performance=performance
             ) cores[i];
         }

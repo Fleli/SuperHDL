@@ -2,22 +2,22 @@
 module Register {
     
     parameters {
-        int bitWidth
+        int bw
     }
     
     inputs {
         bit clk;
         bit reset;
-        bit[bitWidth-1 : 0] d;
+        bit[bw-1 : 0] d;
     }
     
     outputs {
-        bit[bitWidth-1 : 0] q;
+        bit[bw-1 : 0] q;
         bit parity;                 # basically just for language feature show
     }
     
     build {
-        add XORReducer(bitWidth=bitWidth) parityXORReducer;
+        add XORReducer(bw=bw) parityXORReducer;
     }
     
     when rise(clk) {

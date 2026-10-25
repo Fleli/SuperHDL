@@ -2,7 +2,7 @@
 module CPUCore {
     
     parameters {
-        int bitWidth;
+        int bw;
         bool performance;
     }
     
@@ -25,10 +25,10 @@ module CPUCore {
         }
         
         for (int i = 0; i < nALUs; i++) {
-            add CPUCoreALU(bitWidth=bitWidth) alus[i];
+            add CPUCoreALU(bw=bw) alus[i];
         }
         
-        add Register(bitWidth=bitWidth) instructionPointer;
+        add Register(bw=bw) instructionPointer;
         
     }
     

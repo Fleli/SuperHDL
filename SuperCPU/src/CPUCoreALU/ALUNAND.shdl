@@ -2,16 +2,16 @@
 module ALUNAND {
     
     parameters {
-        int bitWidth;
+        int bw;
     }
     
     inputs {
-        bit[bitWidth-1 : 0] d1;
-        bit[bitWidth-1 : 0] d2;
+        bit[bw-1 : 0] d1;
+        bit[bw-1 : 0] d2;
     }
     
     outputs {
-        bit[bitWidth-1 : 0] q;
+        bit[bw-1 : 0] q;
     }
     
     always {

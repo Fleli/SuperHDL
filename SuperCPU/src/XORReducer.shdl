@@ -2,11 +2,11 @@
 module XORReducer {
     
     parameters {
-        int bitWidth;
+        int bw;
     }
     
     inputs {
-        bit[bitWidth-1 : 0] operands;
+        bit[bw-1 : 0] operands;
     }
     
     outputs {
@@ -15,20 +15,20 @@ module XORReducer {
     
     build {
         
-        assert self.bitWidth >= 1;
+        assert self.bw >= 1;
         
-        if self.bitWidth > 1 {
-            add XORReducer(bitWidth=bitWidth-1) subReducer;
+        if self.bw > 1 {
+            add XORReducer(bw=bw-1) subReducer;
         }
         
     }
     
     always {
         
-        if bitWidth == 1 {
+        if bw == 1 {
             reduced = operands[0];
         } else {
-            subReducer.operands = operands[bitWidth-1 : 1];
+            subReducer.operands = operands[bw-1 : 1];
             bit subSolution = subReducer.reduced;
             self.reduced = subSolution ^ operands[0];
         }
