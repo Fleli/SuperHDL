@@ -1,0 +1,2 @@
+
+global int CPU_CORE_T_STATES_BIT_WIDTH = 6;

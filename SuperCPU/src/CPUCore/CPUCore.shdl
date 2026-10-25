@@ -28,7 +28,13 @@ module CPUCore {
             add CPUCoreALU(bw=bw) alus[i];
         }
         
-        add Register(bw=bw) instructionPointer;
+        add Counter(bw=bw) instructionPointer;
+        
+        add Counter(bw=CPU_CORE_T_STATES_BIT_WIDTH) tState;
+        
+    }
+    
+    when rise(clk) {
         
     }
     
