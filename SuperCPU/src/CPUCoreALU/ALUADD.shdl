@@ -19,7 +19,7 @@ module ALUADD {
     always {
         # Hardware addition explicitly returns tuples; carry (2nd element) can be discarded
         # with Python-like syntax q, _ = ...;
-        q, cOut = d1 + d2;
+        q, cOut = cIn + d1 + d2;
     }
     
 }
