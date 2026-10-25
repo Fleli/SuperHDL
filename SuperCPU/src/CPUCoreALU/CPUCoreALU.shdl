@@ -1,0 +1,24 @@
+
+module CPUCoreALU {
+    
+    parameters {
+        int bitWidth;
+    }
+    
+    build {
+        add ALUADD(bitWidth=bitWidth) logicAdd;
+        add ALUXOR(bitWidth=bitWidth) logicXor;
+        add ALUNAND(bitWidth=bitWidth) logicNand;
+    }
+    
+    inputs {
+        bit clk;
+    }
+    
+    outputs {
+        
+    }
+    
+    
+    
+}
