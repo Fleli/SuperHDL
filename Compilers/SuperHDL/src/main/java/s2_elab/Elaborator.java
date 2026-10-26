@@ -19,7 +19,10 @@ public class Elaborator {
         this.underlyingShdlProgram = underlShdlProgram;
         
         this.elaborationPipeline = new ElabStage[] {
-            this::resolveModules,
+            this::resolveCompileTimeExpressions,
+            this::resolveModuleReferences,
+            this::executeCompileTimeStatements,
+            this::desugarOperators
         };
         
     }
@@ -44,9 +47,23 @@ public class Elaborator {
         
     }
     
-    private List<ElabError> resolveModules(ElabStrictness strictness) {
+    private List<ElabError> resolveCompileTimeExpressions(ElabStrictness strictness) {
         return List.of();
     }
+    
+    private List<ElabError> resolveModuleReferences(ElabStrictness strictness) {
+        return List.of();
+    }
+    
+    private List<ElabError> executeCompileTimeStatements(ElabStrictness strictness) {
+        return List.of();
+    }
+    
+    private List<ElabError> desugarOperators(ElabStrictness strictness) {
+        return List.of();
+    }
+    
+    
     
     public SHDLProgram getUnderlyingShdlProgram() {
         return underlyingShdlProgram;
