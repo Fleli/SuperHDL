@@ -1,6 +1,6 @@
-package s2_ir.GraphIR.GraphNative.Bitwise;
+package s3_ir.GraphIR.GraphNative.Bitwise;
 
-import s2_ir.GraphIR.GraphNative.GraphNative;
+import s3_ir.GraphIR.GraphNative.GraphNative;
 
 public abstract class GraphNativeBitwise extends GraphNative {
     

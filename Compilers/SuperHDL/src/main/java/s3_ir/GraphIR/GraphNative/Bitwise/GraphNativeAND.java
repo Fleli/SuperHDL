@@ -1,7 +1,7 @@
-package s2_ir.GraphIR.GraphNative.Bitwise;
+package s3_ir.GraphIR.GraphNative.Bitwise;
 
-import s2_ir.Optimizations.OptimizationResult;
-import s2_ir.Optimizations.Optimizer;
+import s3_ir.Optimizations.OptimizationResult;
+import s3_ir.Optimizations.Optimizer;
 
 public class GraphNativeAND extends GraphNativeBitwise {
     

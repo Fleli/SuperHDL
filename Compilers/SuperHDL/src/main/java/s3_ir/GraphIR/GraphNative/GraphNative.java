@@ -1,8 +1,8 @@
-package s2_ir.GraphIR.GraphNative;
+package s3_ir.GraphIR.GraphNative;
 
-import s2_ir.GraphIR.Core.GraphComponent;
-import s2_ir.GraphIR.Ports.AbstractGraphPortOwner;
-import s2_ir.Optimizations.Optimizable;
+import s3_ir.GraphIR.Core.GraphComponent;
+import s3_ir.GraphIR.Ports.AbstractGraphPortOwner;
+import s3_ir.Optimizations.Optimizable;
 
 // choices here are somewhat arbitrary since theoretically everything can just be lowered to purely NAND gates immediately
 // but keeping higher level items is beneficial for performance and analysis purposes

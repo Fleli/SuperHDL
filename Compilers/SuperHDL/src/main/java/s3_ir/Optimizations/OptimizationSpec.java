@@ -1,4 +1,4 @@
-package s2_ir.Optimizations;
+package s3_ir.Optimizations;
 
 public class OptimizationSpec {
     

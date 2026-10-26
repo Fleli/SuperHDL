@@ -1,15 +1,15 @@
-package s2_ir.GraphIR.Core;
+package s3_ir.GraphIR.Core;
 
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-import s2_ir.GraphIR.Ports.AbstractGraphPortOwner;
-import s2_ir.GraphIR.Ports.GraphInputPort;
-import s2_ir.GraphIR.Ports.GraphOutputPort;
-import s2_ir.Optimizations.OptimizationResult;
-import s2_ir.Optimizations.Optimizer;
-import s2_ir.Optimizations.Optimizable;
+import s3_ir.GraphIR.Ports.AbstractGraphPortOwner;
+import s3_ir.GraphIR.Ports.GraphInputPort;
+import s3_ir.GraphIR.Ports.GraphOutputPort;
+import s3_ir.Optimizations.OptimizationResult;
+import s3_ir.Optimizations.Optimizer;
+import s3_ir.Optimizations.Optimizable;
 
 public class GraphModule extends AbstractGraphPortOwner implements Optimizable {
     
