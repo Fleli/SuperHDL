@@ -3,6 +3,13 @@ package s2_elab;
 import java.util.List;
 
 import s1_parse.SHDLProgram;
+import s2_elab.Core.ElabError;
+import s2_elab.Core.ElabStage;
+import s2_elab.Core.ElabStrictness;
+import s2_elab.Stages.CompileTimeExpressionsResolver;
+import s2_elab.Stages.CompileTimeStatementsExecutor;
+import s2_elab.Stages.ModuleReferencesResolver;
+import s2_elab.Stages.OperatorDesugarer;
 
 public class Elaborator {
     
@@ -19,10 +26,10 @@ public class Elaborator {
         this.underlyingShdlProgram = underlShdlProgram;
         
         this.elaborationPipeline = new ElabStage[] {
-            this::resolveCompileTimeExpressions,
-            this::resolveModuleReferences,
-            this::executeCompileTimeStatements,
-            this::desugarOperators
+            new CompileTimeExpressionsResolver(this),
+            new ModuleReferencesResolver(this),
+            new CompileTimeStatementsExecutor(this),
+            new OperatorDesugarer(this)
         };
         
     }
@@ -46,24 +53,6 @@ public class Elaborator {
         return result;
         
     }
-    
-    private List<ElabError> resolveCompileTimeExpressions(ElabStrictness strictness) {
-        return List.of();
-    }
-    
-    private List<ElabError> resolveModuleReferences(ElabStrictness strictness) {
-        return List.of();
-    }
-    
-    private List<ElabError> executeCompileTimeStatements(ElabStrictness strictness) {
-        return List.of();
-    }
-    
-    private List<ElabError> desugarOperators(ElabStrictness strictness) {
-        return List.of();
-    }
-    
-    
     
     public SHDLProgram getUnderlyingShdlProgram() {
         return underlyingShdlProgram;

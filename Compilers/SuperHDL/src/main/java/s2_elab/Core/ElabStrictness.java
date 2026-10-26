@@ -1,4 +1,4 @@
-package s2_elab;
+package s2_elab.Core;
 
 public enum ElabStrictness {
     IGNORE_WARNINGS,
