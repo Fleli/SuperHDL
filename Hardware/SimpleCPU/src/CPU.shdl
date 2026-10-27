@@ -5,9 +5,7 @@
 # (at least while designing core of it + HDL compiler)
 module CPU {
     
-    init {
-        int bw;
-    }
+    int bw;
     
     build {
         
@@ -15,13 +13,7 @@ module CPU {
         
     }
     
-    inputs {
-        bit clk;
-    }
-    
-    outputs {
-        
-    }
+    in bit clk;
     
     always {
         core.clk = self.clk;

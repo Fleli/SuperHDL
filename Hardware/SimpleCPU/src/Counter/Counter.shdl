@@ -1,24 +1,18 @@
 module Counter {
     
-    init {
-        int bw;
-    }
+    int bw;
     
     private {
         
     }
     
-    inputs {
-        bit clk;
-        bit count;
-        bit jump;
-        bit[bw-1 : 0] d;
-    }
+    in bit clk;
+    in bit count;
+    in bit jump;
+    in bit[bw-1 : 0] d;
     
-    outputs {
-        bit[bw-1 : 0] q;
-        bit overflow;
-    }
+    out bit[bw-1 : 0] q;
+    out bit overflow;
     
     build {
         

@@ -1,22 +1,14 @@
 
 module CPUCore {
     
-    init {
-        int bw;
-        bool performance;
-    }
+    int bw;
+    bool performance;
     
     private {
         int nALUs = 1;
     }
     
-    inputs {
-        bit clk;
-    }
-    
-    outputs {
-        
-    }
+    in bit clk;
     
     build {
         

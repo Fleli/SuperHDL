@@ -1,20 +1,14 @@
 
 module Register {
     
-    init {
-        int bw
-    }
+    int bw;
     
-    inputs {
-        bit clk;
-        bit reset;
-        bit[bw-1 : 0] d;
-    }
+    in bit clk;
+    in bit reset;
+    in bit[bw-1 : 0] d;
     
-    outputs {
-        bit[bw-1 : 0] q;
-        bit parity;                 # basically just for language feature show
-    }
+    out bit[bw-1 : 0] q;
+    out bit parity;                 # basically just for language feature show
     
     build {
         add XORReducer(bw=bw) parityXORReducer;

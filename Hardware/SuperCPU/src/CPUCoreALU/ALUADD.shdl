@@ -1,20 +1,14 @@
 
 module ALUADD {
     
-    init {
-        int bw;
-    }
+    int bw;
     
-    inputs {
-        bit cIn;
-        bit[bw-1 : 0] d1;
-        bit[bw-1 : 0] d2;
-    }
+    in bit cIn;
+    in bit[bw-1 : 0] d1;
+    in bit[bw-1 : 0] d2;
     
-    outputs {
-        bit cOut;
-        bit[bw-1 : 0] q;
-    }
+    out bit cOut;
+    out bit[bw-1 : 0] q;
     
     always {
         # Hardware addition explicitly returns tuples; carry (2nd element) can be discarded

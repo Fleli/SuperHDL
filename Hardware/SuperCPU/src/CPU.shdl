@@ -5,10 +5,8 @@
 # (at least while designing core of it + HDL compiler)
 module CPU {
     
-    init {
-        int nCores;
-        int bw;
-    }
+    int nCores;
+    int bw;
     
     build {
         
@@ -22,13 +20,7 @@ module CPU {
         
     }
     
-    inputs {
-        bit clk;
-    }
-    
-    outputs {
-        
-    }
+    in bit clk;
     
     always {
         for (int i = 0; i < nCores; i += 1) {

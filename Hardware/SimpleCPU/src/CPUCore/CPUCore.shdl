@@ -1,17 +1,13 @@
 
 module CPUCore {
     
-    init {
-        int bw;
-    }
-    
-    inputs {
-        bit clk;
-    }
-    
-    outputs {
+    hardware {
         
     }
+    
+    int bw;
+    
+    in bit clk;
     
     private {
         bit[bw-1 : 0] bus;

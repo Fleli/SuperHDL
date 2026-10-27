@@ -1,17 +1,11 @@
 
 module XORReducer {
     
-    init {
-        int bw;
-    }
+    int bw;
     
-    inputs {
-        bit[bw-1 : 0] operands;
-    }
+    in bit[bw-1 : 0] operands;
     
-    outputs {
-        bit reduced;
-    }
+    out bit reduced;
     
     build {
         

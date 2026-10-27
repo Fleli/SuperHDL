@@ -1,9 +1,7 @@
 
 module CPUCoreALU {
     
-    init {
-        int bw;
-    }
+    int bw;
     
     build {
         add ALUADD(bw=bw) logicAdd;
@@ -13,14 +11,10 @@ module CPUCoreALU {
         add Register(bw=bw) d2;
     }
     
-    inputs {
-        bit clk;
-        ALUOperation selector;
-    }
+    in bit clk;
+    in ALUOperation selector;
     
-    outputs {
-        bit[bw-1 : 0] q;
-    }
+    out bit[bw-1 : 0] q;
     
     always {
         if operation == ALUOperation.XOR {
