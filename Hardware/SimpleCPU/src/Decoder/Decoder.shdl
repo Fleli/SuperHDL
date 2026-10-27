@@ -1,0 +1,23 @@
+module Decoder {
+    
+    parameters {
+        int bw;
+    }
+    
+    private {
+        
+    }
+    
+    inputs {
+        
+    }
+    
+    outputs {
+        
+    }
+    
+    build {
+        
+    }
+    
+}

@@ -1,0 +1,7 @@
+
+enum Opcode as bit[CPU_CORE_T_STATES_BIT_WIDTH-1 : 0] {
+    
+    NoOperation = 0;
+    Add = 1;
+    
+}
