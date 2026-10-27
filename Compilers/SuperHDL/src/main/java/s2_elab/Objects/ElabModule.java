@@ -15,7 +15,6 @@ public class ElabModule {
         this.submodules = new HashSet<>();
         this.alwaysStatements = new HashSet<>();
         this.whenStatements = new HashSet<>();
-        
     }
     
     public void addSubmodule(ElabModule submodule) {
