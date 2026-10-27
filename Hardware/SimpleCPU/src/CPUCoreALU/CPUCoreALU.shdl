@@ -1,7 +1,7 @@
 
 module CPUCoreALU {
     
-    parameters {
+    init {
         int bw;
     }
     

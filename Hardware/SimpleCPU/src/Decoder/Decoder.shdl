@@ -1,7 +1,11 @@
 module Decoder {
     
-    parameters {
-        int bw;
+    int bw;
+    
+    CPUCore parent;
+    
+    init {
+        
     }
     
     private {

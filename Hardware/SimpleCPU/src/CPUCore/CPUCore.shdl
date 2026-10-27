@@ -1,7 +1,7 @@
 
 module CPUCore {
     
-    parameters {
+    init {
         int bw;
     }
     
@@ -16,6 +16,10 @@ module CPUCore {
     private {
         bit[bw-1 : 0] bus;
         bit[CPU_CORE_REGISTER_SELECT_BW-1 : 0] selectedRegister;
+    }
+    
+    public {
+        
     }
     
     build {

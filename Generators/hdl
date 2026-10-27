@@ -53,7 +53,7 @@ mkdir "$module_directory"
 cat > "$module_file" <<EOF
 module $module_name {
     
-    parameters {
+    init {
         
     }
     

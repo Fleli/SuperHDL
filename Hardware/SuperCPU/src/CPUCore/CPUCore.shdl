@@ -1,7 +1,7 @@
 
 module CPUCore {
     
-    parameters {
+    init {
         int bw;
         bool performance;
     }

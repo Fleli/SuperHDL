@@ -1,7 +1,7 @@
 
 module ALUNAND {
     
-    parameters {
+    init {
         int bw;
     }
     

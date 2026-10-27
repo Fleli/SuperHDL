@@ -49,7 +49,7 @@
             "patterns": [
                 {
                     "name": "keyword.control.superhdl",
-                    "match": "\\b(enum|as|global|parameters|private|inputs|outputs|build|always|when|add|if|else|for|assert|rise|fall)\\b"
+                    "match": "\\b(enum|as|global|init|public|private|inputs|outputs|build|always|when|add|declare|if|else|for|assert|rise|fall)\\b"
                 },
                 {
                     "name": "variable.language.superhdl",

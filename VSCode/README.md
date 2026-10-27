@@ -15,6 +15,6 @@ The language mode in the editor status bar should read `SuperHDL`.
 
 The grammar reflects the language syntax currently being explored:
 
-- `module`, `parameters`, `inputs`, `outputs`, `build`, `always`, and `when`
+- `module`, `init`, `inputs`, `outputs`, `build`, `always`, and `when`
 - `add`, `if`, `else`, `assert`, and `rise`
 - `bit`, `int`, `self`, integer literals, comments, and operators

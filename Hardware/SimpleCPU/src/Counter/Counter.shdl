@@ -1,6 +1,6 @@
 module Counter {
     
-    parameters {
+    init {
         int bw;
     }
     

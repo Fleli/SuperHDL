@@ -5,7 +5,7 @@
 # (at least while designing core of it + HDL compiler)
 module CPU {
     
-    parameters {
+    init {
         int bw;
     }
     
