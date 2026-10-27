@@ -15,6 +15,7 @@ module CPUCore {
     
     private {
         bit[bw-1 : 0] bus;
+        bit[CPU_CORE_REGISTER_SELECT_BW-1 : 0] selectedRegister;
     }
     
     build {
@@ -26,7 +27,7 @@ module CPUCore {
         # TODO: Remember to wire tState.d
         add Counter(bw=CPU_CORE_T_STATES_BIT_WIDTH) tState;
         
-        for (int i = 0; i < CPU_CORE_N_GENERAL_PURPOSE_REGISTERS; i++) {
+        for (int i = 0; i < CPU_CORE_N_REGISTERS; i++) {
             add Register(bw=bw) reg[i];
         }
         
@@ -44,7 +45,18 @@ module CPUCore {
     
     always {
         
+        # I guess the compiler needs to solve a Constraint
+        # Satisfaction Problem to solve this.
+        for (int i = 0; i < CPU_CORE_N_REGISTERS; i++) {
+            # should we have a cast from int i to bit[2:0] for comparison?
+            if selectedRegister == i {
+                bus = reg[i];
+            }
+        }
         
+        if selectedRegister == CPU_CORE_N_REGISTERS {
+            bus = 0;
+        }
         
     }
     
