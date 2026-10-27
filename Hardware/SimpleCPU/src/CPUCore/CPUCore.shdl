@@ -13,6 +13,10 @@ module CPUCore {
         
     }
     
+    private {
+        bit[bw-1 : 0] bus;
+    }
+    
     build {
         
         add CPUCoreALU(bw=bw) alu;
@@ -21,6 +25,10 @@ module CPUCore {
         
         # TODO: Remember to wire tState.d
         add Counter(bw=CPU_CORE_T_STATES_BIT_WIDTH) tState;
+        
+        for (int i = 0; i < CPU_CORE_N_GENERAL_PURPOSE_REGISTERS; i++) {
+            add Register(bw=bw) reg[i];
+        }
         
     }
     
@@ -31,6 +39,12 @@ module CPUCore {
         tState.clk = self.clk;
         tState.count = true;
         tState.jump = false;
+        
+    }
+    
+    always {
+        
+        
         
     }
     

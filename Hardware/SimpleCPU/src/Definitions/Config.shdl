@@ -1,2 +1,4 @@
 
 global int CPU_CORE_T_STATES_BIT_WIDTH = 6;
+
+global int CPU_CORE_N_GENERAL_PURPOSE_REGISTERS = 8;
