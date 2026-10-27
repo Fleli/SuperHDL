@@ -29,6 +29,8 @@ module CPUCoreALU {
             q = logicAdd.q;
         } else if operation == ALUOperation.NAND {
             q = logicNand.q;
+        } else {
+            q = 0;  # <-- If missing, how does the compiler handle this?
         }
     }
     
