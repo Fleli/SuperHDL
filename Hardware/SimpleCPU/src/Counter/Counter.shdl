@@ -17,6 +17,7 @@ module Counter {
     
     outputs {
         bit[bw-1 : 0] q;
+        bit overflow;
     }
     
     build {
@@ -26,8 +27,9 @@ module Counter {
     when rise(clk) {
         if jump {
             q = d;
+            overflow = 0;
         } else if count {
-            q, _ = q + 1;
+            q, overflow = q + 1;
         }
     }
     
