@@ -1,0 +1,37 @@
+
+module CPUCore {
+    
+    parameters {
+        int bw;
+    }
+    
+    inputs {
+        bit clk;
+    }
+    
+    outputs {
+        
+    }
+    
+    build {
+        
+        add CPUCoreALU(bw=bw) alu;
+        
+        add Counter(bw=bw) instructionPointer;
+        
+        # TODO: Remember to wire tState.d
+        add Counter(bw=CPU_CORE_T_STATES_BIT_WIDTH) tState;
+        
+    }
+    
+    always {
+        
+        alu.clk = self.clk;
+        
+        tState.clk = self.clk;
+        tState.count = true;
+        tState.jump = false;
+        
+    }
+    
+}

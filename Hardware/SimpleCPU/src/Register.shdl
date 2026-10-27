@@ -1,0 +1,36 @@
+
+module Register {
+    
+    parameters {
+        int bw
+    }
+    
+    inputs {
+        bit clk;
+        bit reset;
+        bit[bw-1 : 0] d;
+    }
+    
+    outputs {
+        bit[bw-1 : 0] q;
+        bit parity;                 # basically just for language feature show
+    }
+    
+    build {
+        add XORReducer(bw=bw) parityXORReducer;
+    }
+    
+    when rise(clk) {
+        if reset {
+            q = 0;
+        } else {
+            q = d;
+        }
+    }
+    
+    always {
+        parityXORReducer.operands = q;
+        parity = parityXORReducer.reduced;
+    }
+    
+}

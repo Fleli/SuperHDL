@@ -1,0 +1,38 @@
+
+module XORReducer {
+    
+    parameters {
+        int bw;
+    }
+    
+    inputs {
+        bit[bw-1 : 0] operands;
+    }
+    
+    outputs {
+        bit reduced;
+    }
+    
+    build {
+        
+        assert self.bw >= 1;
+        
+        if self.bw > 1 {
+            add XORReducer(bw=bw-1) subReducer;
+        }
+        
+    }
+    
+    always {
+        
+        if bw == 1 {
+            reduced = operands[0];
+        } else {
+            subReducer.operands = operands[bw-1 : 1];
+            bit subSolution = subReducer.reduced;
+            self.reduced = subSolution ^ operands[0];
+        }
+        
+    }
+    
+}

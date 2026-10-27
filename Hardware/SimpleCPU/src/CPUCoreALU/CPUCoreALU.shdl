@@ -1,0 +1,44 @@
+
+module CPUCoreALU {
+    
+    parameters {
+        int bw;
+    }
+    
+    build {
+        add ALUADD(bw=bw) logicAdd;
+        add ALUXOR(bw=bw) logicXor;
+        add ALUNAND(bw=bw) logicNand;
+        add Register(bw=bw) d1;
+        add Register(bw=bw) d2;
+    }
+    
+    inputs {
+        bit clk;
+        ALUOperation selector;
+    }
+    
+    outputs {
+        bit[bw-1 : 0] q;
+    }
+    
+    always {
+        if operation == ALUOperation.XOR {
+            q = logicXor.q;
+        } else if operation == ALUOperation.ADD {
+            q = logicAdd.q;
+        } else if operation == ALUOperation.NAND {
+            q = logicNand.q;
+        }
+    }
+    
+    always {
+        logicAdd.d1 = d1.q;
+        logicAdd.d2 = d2.q;
+        logicXor.d1 = d1.q;
+        logicXor.d2 = d2.q;
+        logicNand.d1 = d1.q;
+        logicNand.d2 = d2.q;
+    }
+    
+}

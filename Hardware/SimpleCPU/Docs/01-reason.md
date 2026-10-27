@@ -1,0 +1,2 @@
+
+Reason for defining a (Super)CPU project before starting work on the GPU is that I'm much more familiar with CPU design, so using that as a starting point for core language design seems useful. This of course assumes it's fairly translatable to GPUs. Might have to change some things, but I'll use this folder when thinking about how to design the language and what abstractions to expose to the programmer.

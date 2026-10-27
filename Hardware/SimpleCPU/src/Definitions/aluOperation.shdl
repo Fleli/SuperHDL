@@ -1,0 +1,7 @@
+
+enum ALUOperation as bit[1:0] {
+    XOR = 0;
+    ADD = 1;
+    NAND = 2;
+    RESERVED = 3;
+}

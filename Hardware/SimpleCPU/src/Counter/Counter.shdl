@@ -1,0 +1,34 @@
+module Counter {
+    
+    parameters {
+        int bw;
+    }
+    
+    private {
+        
+    }
+    
+    inputs {
+        bit clk;
+        bit count;
+        bit jump;
+        bit[bw-1 : 0] d;
+    }
+    
+    outputs {
+        bit[bw-1 : 0] q;
+    }
+    
+    build {
+        
+    }
+    
+    when rise(clk) {
+        if jump {
+            q = d;
+        } else if count {
+            q, _ = q + 1;
+        }
+    }
+    
+}

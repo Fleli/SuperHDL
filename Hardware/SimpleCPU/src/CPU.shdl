@@ -1,0 +1,30 @@
+
+# Basic design of single-core CPU
+# Will not worry about memory caching for now; assuming
+# such low clock frequency that memory isn't a bottleneck
+# (at least while designing core of it + HDL compiler)
+module CPU {
+    
+    parameters {
+        int bw;
+    }
+    
+    build {
+        
+        add CPUCore(bw=bw) core;
+        
+    }
+    
+    inputs {
+        bit clk;
+    }
+    
+    outputs {
+        
+    }
+    
+    always {
+        core.clk = self.clk;
+    }
+    
+};

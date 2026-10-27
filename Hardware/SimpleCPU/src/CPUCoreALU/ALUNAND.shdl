@@ -1,0 +1,21 @@
+
+module ALUNAND {
+    
+    parameters {
+        int bw;
+    }
+    
+    inputs {
+        bit[bw-1 : 0] d1;
+        bit[bw-1 : 0] d2;
+    }
+    
+    outputs {
+        bit[bw-1 : 0] q;
+    }
+    
+    always {
+        q = ~(d1 & d2);
+    }
+    
+}
