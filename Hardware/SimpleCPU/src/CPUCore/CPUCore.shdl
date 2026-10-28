@@ -1,20 +1,30 @@
 
 module CPUCore {
     
-    hardware {
+    public hardware {
+        
+        bit[bw-1 : 0] bus;
+        bit[CPU_CORE_REGISTER_SELECT_BW-1 : 0] selectedRegister;
+        
+        CPUCoreALU alu;
+        
+        in {
+            bit clk;
+        }
+        
+        out {
+            
+        }
         
     }
     
-    int bw;
-    
-    in bit clk;
-    
-    private {
-        bit[bw-1 : 0] bus;
-        bit[CPU_CORE_REGISTER_SELECT_BW-1 : 0] selectedRegister;
+    compiler {
+        
+        int bw;
+        
     }
     
-    public {
+    init {
         
     }
     
